@@ -17,7 +17,7 @@ public class GameMenuUi : MonoBehaviour
             playerNameText.text = "Best Scrore: " + GameScoreSys.Instance.BestScore + " Player: " + GameScoreSys.Instance.PlayerName;
             //GameScoreSys.Instance.SaveUserInfo();
         }
-        //GameScoreSys.Instance.SaveUserInfo();
+        GameScoreSys.Instance.SaveUserInfo();
     }
     
         public void BackToMenu()

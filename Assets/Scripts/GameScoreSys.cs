@@ -28,6 +28,13 @@ public class GameScoreSys : MonoBehaviour
 
     public void SetPlayerName(string newName)
     {
+        if(newName != PlayerName) // If the name is different from the current one
+        {
+            Debug.Log($" New player detected: {newName}, resetting Best Score.");
+            BestScore = 0; // Reset best score for new player
+            PlayerScore = 0; // Reset current score as well
+            SaveUserInfo(); // Save the reset best score for the new player
+        }
         PlayerName = newName;
         //PlayerScore = 0;
     }
@@ -39,6 +46,7 @@ public class GameScoreSys : MonoBehaviour
         if (PlayerScore > BestScore)
         {
             BestScore = PlayerScore;
+            Debug.Log($"New Best Score Updated: {BestScore}");
         }
     }
 
